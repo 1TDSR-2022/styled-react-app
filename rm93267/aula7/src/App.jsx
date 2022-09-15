@@ -1,9 +1,12 @@
 import React from "react";
+import ListaTarefas from "./components/listaTarefas/ListaTarefas";
+import { TitComp } from './style/styled.js'
 
 export default function App(){
     return(
-        <>
-            <h1>Hello World</h1>
-        </>
+        <div>
+            <TitComp>ESTUDO SOBRE STYLED-COMPONENT</TitComp>
+            <ListaTarefas/>
+        </div>
     )
 }

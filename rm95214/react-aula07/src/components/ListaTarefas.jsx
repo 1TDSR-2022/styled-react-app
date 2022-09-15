@@ -1,13 +1,16 @@
 import React from "react";
 import Tarefa from "./Tarefa";
+import { DivLista } from "../style/styled";
 
 
-export default function App(){
+export default function ListaTarefas(){
     return(
-        <div>
+        <DivLista>
              
                 <p>Lista de Tarefas</p>
                 <Tarefa/>
-        </div>
+                <Tarefa/>
+                <Tarefa/>
+        </DivLista>
     )
 }

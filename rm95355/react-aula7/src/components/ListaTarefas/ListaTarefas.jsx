@@ -42,8 +42,14 @@ export default function ListaTarefas() {
       }else if(name === "descricao"){
         setNTarefa({"titulo":nTarefa.titulo,"setor":nTarefa.setor,"descricao":value})
       }
+    }
 
+    const removerTarefa = (tar)=>{
 
+      let lista = tarefa
+
+      lista = lista.filter((t)=> t !== tar) 
+      setTarefa(lista)
     }
   
     return (
@@ -64,6 +70,7 @@ export default function ListaTarefas() {
             key={i}
             //Enviando apenas o objeto
             tarefa={tar}
+            remove={removerTarefa.bind(this,tar)}
             //Enviando os atributos separados
             // titulo={tar.titulo}
             // setor={tar.setor}

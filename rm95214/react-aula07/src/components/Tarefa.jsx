@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components"
+import { DivTarefa } from "../style/styled";
 
 // CRIANDO MODÚLO
 const DivTarefa = styled.div `
@@ -19,12 +20,13 @@ p {
 `;
 
 
-export default function Tarefa(){
+export default function Tarefa(props){
     return(
         <DivTarefa>
-            <h2>Relatório de vendas</h2>
-            <p>Para: Departamento de Vendas</p>
-            <p>Levantar os valores das vendas deste mês.</p>
+            <h2>{props.titulo}</h2>
+            <p>{props.setor}</p>
+            <p>{props.descricao}</p>
         </DivTarefa>
     )
 }
+

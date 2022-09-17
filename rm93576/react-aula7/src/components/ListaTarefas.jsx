@@ -21,10 +21,17 @@ export default function ListaTarefas() {
 
   return (
     <DivLista>
-        <p>Lista de Tarefas</p>
+      {tarefa.map((tar,i)=>
         <Tarefa
-        
+          key={i}
+          // Enviando apenas o objeto (MELHOR MANEIRA DE TRANSPORTAR UM OBJETO)
+          tarefa={tar}
+          // Enviando os atributos separados
+          // titulo={tar.titulo}
+          // setor={tar.setor}
+          // descricao={tar.descricao}
         />
+      )}
     </DivLista>
   )
 }

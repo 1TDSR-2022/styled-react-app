@@ -5,9 +5,9 @@ export default function Tarefa(props) {
     
   return (
     <DivTarefa>
-        <h2>Relatório de vendas</h2>
-        <p>Para: Departamento de Vendas</p>
-        <p>Levantar os valores de venda deste mês</p>
+        <h2>{props.tarefa.titulo}</h2>
+        <p>{props.tarefa.setor}</p>
+        <p>{props.tarefa.descricao}</p>
     </DivTarefa>
   )
 }

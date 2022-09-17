@@ -5,7 +5,7 @@ export default function App() {
   return (
 
     <>
-        <h1>VALENTINA OTARIA</h1>
+        <h1>TAREFAS</h1>
         <ListaTarefas/>
     </>
 

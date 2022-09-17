@@ -45,6 +45,14 @@ export default function ListaTarefas() {
 
     }
 
+    const removerTarefa = (tar)=>{
+
+      let lista = tarefa
+
+      lista = lista.filter((t)=> t !== tar) 
+      setTarefa(lista)
+    }
+
 
   return (
     <DivLista>
@@ -65,6 +73,7 @@ export default function ListaTarefas() {
           key={i}
           //Enviando apenas o objeto
           tarefa={tar}
+          remove={removerTarefa.bind(this,tar)}
           //Enviando os atributos separados
           // titulo={tar.titulo}
           // setor={tar.setor}

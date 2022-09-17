@@ -1,35 +1,55 @@
-import React, { useState } from 'react'
+import React,{ useState } from 'react'
 import Tarefa from './Tarefa'
 import { DivLista } from '../style/styled'
 
+
 export default function ListaTarefas() {
 
-    const [tarefa, setTarefa] = useState([
-        {
-            "título" : "Lista de Pagamento",
-            "setor" : "Dep. de Vendas",
-            "descricao" : "Levantar os valores de vendas"
-        }
-        ,
-        {
-            "título" : "Planilha de Salários",
-            "setor" : "Dep. Pessoal",
-            "descricao" : "Gerar Planilhas"
-        }
-    ])
+  const [tarefa, setTarefa] = useState([
+    {
+      "titulo" : "Lista de Pagamento",
+      "setor" : "Dep. de Vendas",
+      "descricao":"Levantar os vvalorres de vendas"
+    }
+    ,
+    {
+      "titulo" : "Planilha de Salários",
+      "setor" : "Dep. Pessoal",
+      "descricao":"Gerar Planilhas"
+    }
+  ])
 
-     return (
-        <DivLista>
-            {tarefa.map(()=>
-            <Tarefa
-                key={i}
-                //Enviando os atributos separados
-                tarefa={tar}
-                //titulo={tarefa.titulo}
-                //setor={tarefa.setor}
-                //descricao={tarefa.descricao}
-            />
-         )}
-        </DivLista>
-    )
+    const addTarefa = ()=>{
+      
+      //CRIANDO O OBJETO PARA SER ADICIONADO NA LISTA
+      const novaTarefa = {
+          "titulo" : "Planilha de Notas",
+          "setor" : "Dep. Graduação",
+          "descricao":"Lançar Notas"
+      }
+
+      //ADICIONANDO O OBJETO AO STATE
+      setTarefa([...tarefa, novaTarefa])
+    }
+
+  return (
+    <DivLista>
+
+    {/* Criando um disparador da função addTarefa */}
+    <button onClick={addTarefa}>Adicionar</button>
+
+      {tarefa.map((tar,i)=>
+        <Tarefa
+          key={i}
+          //Enviando apenas o objeto
+          tarefa={tar}
+          //Enviando os atributos separados
+          // titulo={tar.titulo}
+          // setor={tar.setor}
+          // descricao={tar.descricao}
+        />
+      )}
+
+    </DivLista>
+  )
 }

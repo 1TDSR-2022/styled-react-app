@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components'
+import React from 'react'
+import { DivTarefa } from "../style/styled"
 
-function Tarefa(props) {
+export default function Tarefa(props) {
     
     return (
         <DivTarefa>
@@ -11,5 +11,3 @@ function Tarefa(props) {
         </DivTarefa>
     );
 }
-
-export default Tarefa;

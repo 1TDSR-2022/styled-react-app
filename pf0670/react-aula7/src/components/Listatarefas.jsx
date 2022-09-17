@@ -19,9 +19,25 @@ export default function ListaTarefas() {
     }
   ])
 
+    const addTarefa = ()=>{
+      
+      //CRIANDO O OBJETO PARA SER ADICIONADO NA LISTA
+      const novaTarefa = {
+          "titulo" : "Planilha de Notas",
+          "setor" : "Dep. Graduação",
+          "descricao":"Lançar Notas"
+      }
+
+      //ADICIONANDO O OBJETO AO STATE
+      setTarefa([...tarefa, novaTarefa])
+    }
 
   return (
     <DivLista>
+
+    {/* Criando um disparador da função addTarefa */}
+    <button onClick={addTarefa}>Adicionar</button>
+
       {tarefa.map((tar,i)=>
         <Tarefa
           key={i}

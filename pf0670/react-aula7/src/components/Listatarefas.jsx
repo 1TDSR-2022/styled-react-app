@@ -22,9 +22,18 @@ export default function ListaTarefas() {
 
   return (
     <DivLista>
+      {tarefa.map((tar,i)=>
         <Tarefa
-          
+          key={i}
+          //Enviando apenas o objeto
+          tarefa={tar}
+          //Enviando os atributos separados
+          // titulo={tar.titulo}
+          // setor={tar.setor}
+          // descricao={tar.descricao}
         />
+      )}
+
     </DivLista>
   )
 }
